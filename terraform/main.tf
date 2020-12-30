@@ -63,7 +63,7 @@ module "ec2_cluster" {
   subnet_id              = "subnet-acd005e4"
 
   tags = { 
-    Name = "IMVCS-CC-1-demo"
+    Name = "IMVCS-CC-demo"
     Terraform   = "true"
     Environment = "dev"
   }
