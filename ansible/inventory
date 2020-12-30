@@ -1,8 +1,0 @@
-
-
-[servers]
-server1 ansible_host=13.250.5.174 # i-043f03fbfa5e9a5fd
-server2 ansible_host=13.212.33.237 # i-0d9c1f966c1272557
-
-[servers:vars]
-ansible_python_interpreter=/usr/bin/python3

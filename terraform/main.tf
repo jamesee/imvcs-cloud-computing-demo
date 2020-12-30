@@ -11,10 +11,10 @@ provider "aws" {
   region = "ap-southeast-1"
 }
 
-resource "aws_key_pair" "example" {
-  key_name   = "example-key"
-  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDnKcDRgECTWJuEYKxOmrLGhiGiqAOnqG2o5NzddXNgMW2n1m8PfqkqXRyDoNON8/SVyqm1rdvfKVxi3bxuedjpW07K8meFUBUX/4/WyL+I7ijLyzrk0kEnTwamZ+miYKCqhk14PF+1h7Mq8GzcLKBLER0CHL0gNfyMO9DVhP6xFcQljGHHJ5pgvXOepjjHSuGTPIk78g2CqKDbI3fCYO8zHkruvdhVqISDFfhDF04TomH579CLb3B1GokQi7WsbdNe0dFxtoo4rty/yHScRmZKTv2PhajEvX3U9Dj9iqK4GRA7c/RWyCNbWtuwA03nItfcNHgI4h17ATTPz9P6JQnR james@Jamess-MBP"
-}
+#resource "aws_key_pair" "example" {
+#  key_name   = "example-key"
+#  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDnKcDRgECTWJuEYKxOmrLGhiGiqAOnqG2o5NzddXNgMW2n1m8PfqkqXRyDoNON8/SVyqm1rdvfKVxi3bxuedjpW07K8meFUBUX/4/WyL+I7ijLyzrk0kEnTwamZ+miYKCqhk14PF+1h7Mq8GzcLKBLER0CHL0gNfyMO9DVhP6xFcQljGHHJ5pgvXOepjjHSuGTPIk78g2CqKDbI3fCYO8zHkruvdhVqISDFfhDF04TomH579CLb3B1GokQi7WsbdNe0dFxtoo4rty/yHScRmZKTv2PhajEvX3U9Dj9iqK4GRA7c/RWyCNbWtuwA03nItfcNHgI4h17ATTPz9P6JQnR james@Jamess-MBP"
+#}
 
 resource "aws_security_group" "examplesg" {
   ingress {
@@ -57,8 +57,9 @@ module "ec2_cluster" {
 
   ami                    = "ami-06fb5332e8e3e577a"
   instance_type          = "t2.micro"
-  key_name               = aws_key_pair.example.id
   monitoring             = true
+# key_name               = aws_key_pair.example.id
+  key_name               = "IMVCS-CC-demo"
   vpc_security_group_ids = [aws_security_group.examplesg.id]
   subnet_id              = "subnet-acd005e4"
 
