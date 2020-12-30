@@ -1,0 +1,9 @@
+
+
+[servers]
+%{ for index, ip in public_ip ~}
+server${index+1} ansible_host=${public_ip[index]} # ${instance_id[index]}
+%{ endfor ~}
+
+[servers:vars]
+ansible_python_interpreter=/usr/bin/python3
