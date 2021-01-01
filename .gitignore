@@ -1,6 +1,4 @@
 .DS_Store
 
-learn-terraform-provision-eks-cluster terraform/.terraform/terraform.tfstate*
 learn-terraform-provision-eks-cluster terraform/.terraform/
-terraform/terraform.tfstate*
 terraform/.terraform/
